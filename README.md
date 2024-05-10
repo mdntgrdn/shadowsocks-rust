@@ -6,27 +6,27 @@ To start:
 ***
 
 # Environment Variables
-- DOCKER_IMAGE - base shadowsocks-rust docker image. default=ghcr.io/shadowsocks/ssserver-rust:latest
-- V2RAY_VERSION - version of v2ray-plugin. default=v1.3.2
-- XRAY_VERSION - version of xray-plugin. default=v1.8.11
-- SERVER_DOMAIN_NAME - Domain name. Required when use tls. default=None
-- SSL_CERTIFICATE_PATH - Path to SSL fullchain.pem file. Required when use tls. default=None
-- SSL_CERTIFICATE_KEY_PATH - Path to SSL privkey.pem file. Required when use tls. default=None
+- ```DOCKER_IMAGE``` - base shadowsocks-rust docker image. default=ghcr.io/shadowsocks/ssserver-rust:latest
+- ```V2RAY_VERSION``` - version of v2ray-plugin. default=v1.3.2
+- ```XRAY_VERSION``` - version of xray-plugin. default=v1.8.11
+- ```SERVER_DOMAIN_NAME``` - Domain name. Required when use tls. default=None
+- ```SSL_CERTIFICATE_PATH``` - Path to SSL fullchain.pem file. Required when use tls. default=None
+- ```SSL_CERTIFICATE_KEY_PATH``` - Path to SSL privkey.pem file. Required when use tls. default=None
 ***
 
 # Scripts
 
-## add_user 
+## add_user.py
 Allow to automatically create new user. You should call "start" command after creation
   - arguments: 
-    * --use-tls - Bool value. Should plugin use TLS or not
-    * --plugin - The name of the plugin to use (xray-plugin or v2-ray-plugin)
-    * --mode - The Protocol the plugin will use (websocket or grpc)
-## delete_user
+    * ```--use-tls``` - Bool value. Should plugin use TLS or not
+    * ```--plugin``` - The name of the plugin to use (xray-plugin or v2-ray-plugin)
+    * ```--mode``` - The Protocol the plugin will use (websocket or grpc)
+## delete_user.py
 Allows to remove user by port
   - arguments:
-    * --port: The port to delete
-## start
+    * ```--port```: The port to delete
+## start.py
 Start pre-configured docker container with shadowsocks-rust server
 ***
 
