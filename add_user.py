@@ -82,7 +82,7 @@ def validate_add_user_params(mode: str, plugin: str, use_tls: bool) -> bool:
             f"{constants.SSL_CERTIFICATE_PATH}"
         ) or not os.path.exists(f"{constants.SSL_CERTIFICATE_KEY_PATH}"):
             print(f"SSL_CERTIFICATE_PATH or SSL_CERTIFICATE_KEY_PATH paths not found")
-        sys.exit()
+            sys.exit()
     return True
 
 
