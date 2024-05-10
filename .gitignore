@@ -1,1 +1,6 @@
 .venv
+.env.local
+shadowsocks.sh
+v2ray-plugin
+xray-plugin
+config.json

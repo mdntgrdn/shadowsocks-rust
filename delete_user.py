@@ -22,7 +22,7 @@ def remove_user(port: int):
             print(f"User port {port} does not exist")
             sys.exit()
     with open(f"{constants.CONFIG_FILE_NAME}", "w") as file:
-        json.dump(current_config, file)
+        json.dump(current_config, file, indent=4)
         print(f"Port {port} has been removed")
 
 
