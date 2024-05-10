@@ -38,7 +38,7 @@ plugin - https://github.com/shadowsocks/v2ray-plugin-android
 
 ### IOS
 client - https://apps.apple.com/us/app/shadowrocket/id932747118 \
-v2ray-plugin included in the application. It also supports xray-plugin
+v2ray-plugin included in the application.
 If plugin is not required, you can use https://apps.apple.com/ru/app/potatso/id1239860606
 
 ### MacOS
