@@ -3,6 +3,16 @@
 To start:
 - ```pip install click```
 - ```apt install docker```
+***
+
+# Environment Variables
+- DOCKER_IMAGE - base shadowsocks-rust docker image. default=ghcr.io/shadowsocks/ssserver-rust:latest
+- V2RAY_VERSION - version of v2ray-plugin. default=v1.3.2
+- XRAY_VERSION - version of xray-plugin. default=v1.8.11
+- SERVER_DOMAIN_NAME - Domain name. Required when use tls. default=None
+- SSL_CERTIFICATE_PATH - Path to SSL fullchain.pem file. Required when use tls. default=None
+- SSL_CERTIFICATE_KEY_PATH - Path to SSL privkey.pem file. Required when use tls. default=None
+***
 
 # Scripts
 
