@@ -88,7 +88,9 @@ def generate_tls_volumes_command():
             )
             sys.exit()
     else:
-        pass
+        subprocess.Popen(["chmod", "+r", constants.SSL_CERTIFICATE_PATH]).wait()
+        subprocess.Popen(["chmod", "+r", constants.SSL_CERTIFICATE_KEY_PATH]).wait()
+
         command.extend(
             [
                 "-v",
