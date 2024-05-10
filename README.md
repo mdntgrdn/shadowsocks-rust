@@ -1,4 +1,8 @@
+# Gettings Started
 
+To start:
+- pip install click
+- apt install docker
 
 # Scripts
 
