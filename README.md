@@ -22,6 +22,7 @@ Allow to automatically create new user. You should call "start" command after cr
     * ```--use-tls``` - Bool value. Should plugin use TLS or not
     * ```--plugin``` - The name of the plugin to use (xray-plugin or v2-ray-plugin)
     * ```--mode``` - The Protocol the plugin will use (websocket or grpc)
+    * ```--description``` - User description
 ## delete_user.py
 Allows to remove user by port
   - arguments:

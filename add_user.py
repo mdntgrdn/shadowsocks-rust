@@ -53,12 +53,13 @@ def get_available_port() -> int:
             return available_servers[-1]["server_port"] + 1
 
 
-def generate_base_server_config() -> dict:
+def generate_base_server_config(description: str) -> dict:
     return {
         "server": "::",
         "server_port": get_available_port(),
         "password": generate_key(),
         "method": "aes-256-gcm",
+        "_description": description,
     }
 
 
@@ -101,10 +102,15 @@ def validate_add_user_params(mode: str, plugin: str, use_tls: bool) -> bool:
 @click.option(
     "--use-tls", default=False, type=click.BOOL, help=f"Should plugin use TLS or not"
 )
-def add_user(plugin: str, mode: str, use_tls: bool):
+@click.option(
+    "--description",
+    default="",
+    help=f"User description",
+)
+def add_user(plugin: str, mode: str, use_tls: bool, description: str):
     validate_add_user_params(plugin=plugin, mode=mode, use_tls=use_tls)
     generate_base_config()
-    server_config = generate_base_server_config()
+    server_config = generate_base_server_config(description)
     if plugin:
         server_config.update(build_plugins_config(mode, plugin, use_tls))
     with open(constants.CONFIG_FILE_NAME, "r") as file:
