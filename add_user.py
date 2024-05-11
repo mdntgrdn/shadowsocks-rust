@@ -55,7 +55,7 @@ def get_available_port() -> int:
 
 def generate_base_server_config(description: str) -> dict:
     return {
-        "server": "::",
+        "server": "0.0.0.0",
         "server_port": get_available_port(),
         "password": generate_key(),
         "method": "aes-256-gcm",

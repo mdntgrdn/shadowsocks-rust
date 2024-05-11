@@ -6,7 +6,7 @@ To start:
 ***
 
 # Environment Variables
-- ```DOCKER_IMAGE``` - base shadowsocks-rust docker image. default=ghcr.io/shadowsocks/ssserver-rust:latest
+- ```DOCKER_IMAGE``` - base shadowsocks-rust docker image. default=ghcr.io/shadowsocks/ssserver-rust:v1.18.4
 - ```V2RAY_VERSION``` - version of v2ray-plugin. default=v1.3.2
 - ```XRAY_VERSION``` - version of xray-plugin. default=v1.8.11
 - ```SERVER_DOMAIN_NAME``` - Domain name. Required when use tls. default=None
@@ -34,7 +34,7 @@ Start pre-configured docker container with shadowsocks-rust server
 # Clients
 ## Android
 client - https://github.com/shadowsocks/shadowsocks-android
-plugin - https://github.com/shadowsocks/v2ray-plugin-android
+plugin - https://github.com/shadowsocks/v2ray-plugin-android, https://github.com/teddysun/xray-plugin-android/releases/tag/v1.8.11
 
 ### IOS
 client - https://apps.apple.com/us/app/shadowrocket/id932747118 \
