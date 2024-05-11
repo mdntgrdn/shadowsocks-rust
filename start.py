@@ -61,7 +61,7 @@ def check_ports_with_tls() -> List[int]:
     with open(f"{constants.CONFIG_FILE_NAME}") as file:
         ports_with_tls = []
         for server in json.load(file)["servers"]:
-            if "tls" in server["plugin_opts"].split(";"):
+            if "tls" in server.get("plugin_opts", "").split(";"):
                 ports_with_tls.append(server["server_port"])
     return ports_with_tls
 
