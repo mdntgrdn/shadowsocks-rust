@@ -12,23 +12,38 @@ To start:
 - ```SERVER_DOMAIN_NAME``` - Domain name. Required when use tls. default=None
 - ```SSL_CERTIFICATE_PATH``` - Path to SSL fullchain.pem file. Required when use tls. default=None
 - ```SSL_CERTIFICATE_KEY_PATH``` - Path to SSL privkey.pem file. Required when use tls. default=None
+
+To load default environment variables, add the next bash command at the end of the .bashrc file
+```bash
+export $(cat <<path>>/shadowsocks-rust/.env | grep -vE "^#" | xargs)
+```
+- path - path to the shadowsocks-rust folder
 ***
 
 # Scripts
 
 ## add_user.py
-Allow to automatically create new user. You should call "start" command after creation
+Allow to automatically create new user. You should call "start" command after creation:
+```bash
+python3 add_user.py --plugin=v2ray-plugin --mode=websocket --description="My config" --use-tls=False
+```
   - arguments: 
-    * ```--use-tls``` - Bool value. Should plugin use TLS or not
-    * ```--plugin``` - The name of the plugin to use (xray-plugin or v2-ray-plugin)
-    * ```--mode``` - The Protocol the plugin will use (websocket or grpc)
-    * ```--description``` - User description
+    * ```--use-tls``` - Bool value. Should plugin use TLS or not (default=False)
+    * ```--plugin``` - The name of the plugin to use (xray-plugin, v2ray-plugin) (default=v2ray-plugin)
+    * ```--mode``` - The Protocol the plugin will use (websocket or grpc) (default=websocket)
+    * ```--description``` - User description (default="")
 ## delete_user.py
-Allows to remove user by port
+Allows to remove user by port:
+```bash
+python3 delete_user.py --port=8391
+```
   - arguments:
     * ```--port```: The port to delete
 ## start.py
-Start pre-configured docker container with shadowsocks-rust server
+Start pre-configured docker container with shadowsocks-rust server:
+```bash
+python3 start.py
+```
 ***
 
 # Clients
