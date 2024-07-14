@@ -8,6 +8,7 @@ from secrets import token_bytes
 import click
 
 import constants
+from backups.yandex import YandexClient
 
 
 def generate_key():
@@ -118,6 +119,8 @@ def add_user(plugin: str, mode: str, use_tls: bool, description: str):
         current_config["servers"].append(server_config)
     with open(constants.CONFIG_FILE_NAME, "w") as file:
         json.dump(current_config, file, indent=4)
+    if constants.YANDEX_CLIENT_ID and constants.YANDEX_CLIENT_SECRET and constants.YANDEX_DISK_FILE_PATH:
+        YandexClient().upload_file_to_yandex_disk()
     print({"password": server_config["password"], "port": server_config["server_port"]})
 
 

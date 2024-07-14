@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "shadowsocks-rust"
+version = "0.1.0"
+description = ""
+authors = ["Pavel Merkulov <merkulov0pavel@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+yadisk = "^3.1.0"
+click = "^8.1.7"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

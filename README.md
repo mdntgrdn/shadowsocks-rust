@@ -1,8 +1,8 @@
 # Gettings Started
 
 To start:
-- ```pip install click```
 - ```apt install docker```
+- ```poetry install```
 ***
 
 # Environment Variables
@@ -12,6 +12,13 @@ To start:
 - ```SERVER_DOMAIN_NAME``` - Domain name. Required when use tls. default=None
 - ```SSL_CERTIFICATE_PATH``` - Path to SSL fullchain.pem file. Required when use tls. default=None
 - ```SSL_CERTIFICATE_KEY_PATH``` - Path to SSL privkey.pem file. Required when use tls. default=None
+## Yandex Backups
+
+If you want to create backups to yandex disk on creation or deletion users, so follow next instructions of creating an app
+https://yandex.com/dev/id/doc/en/register-client, keep in mind that redirect url must be https://oauth.yandex.ru/verification_code
+- ```YANDEX_CLIENT_ID``` - Yandex Application ID
+- ```YANDEX_CLIENT_SECRET``` - Yandex Application Client Secret
+- ```YANDEX_DISK_FILE_PATH``` - Path to the yandex disk (default="/config.json")
 
 To load default environment variables, add the next bash command at the end of the .bashrc file
 ```bash
@@ -43,6 +50,17 @@ python3 delete_user.py --port=8391
 Start pre-configured docker container with shadowsocks-rust server:
 ```bash
 python3 start.py
+```
+## backup_config.py
+If backup is enabled and you would like to manually upload config.json file to the storage,
+so you need to use this command
+```bash
+python3 backup_config.py 
+```
+## download_config.py
+If you already have a config in supported storage you can download it through the next command
+```bash
+python3 download_config.py 
 ```
 ***
 

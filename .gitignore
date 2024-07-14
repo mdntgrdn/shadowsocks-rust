@@ -1,5 +1,5 @@
 .venv
-.env.local
+.env
 shadowsocks.sh
 v2ray-plugin
 xray-plugin

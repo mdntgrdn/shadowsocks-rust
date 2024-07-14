@@ -4,6 +4,8 @@ import click
 import constants
 import json
 
+from backups.yandex import YandexClient
+
 
 @click.command()
 @click.option(
@@ -24,6 +26,7 @@ def remove_user(port: int):
     with open(f"{constants.CONFIG_FILE_NAME}", "w") as file:
         json.dump(current_config, file, indent=4)
         print(f"Port {port} has been removed")
+    YandexClient().upload_file_to_yandex_disk()
 
 
 if __name__ == "__main__":

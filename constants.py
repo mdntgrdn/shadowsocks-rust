@@ -1,4 +1,9 @@
 import os
+import dotenv
+
+
+dotenv.load_dotenv('.env')
+
 
 # Docker
 DOCKER_IMAGE = os.environ["DOCKER_IMAGE"]
@@ -27,3 +32,12 @@ XRAY_ARCHIVE = f"xray-plugin-linux-amd64-{XRAY_VERSION}.tar.gz"
 
 WEBSOCKET_MODE = "websocket"
 GRPC_MODE = "grpc"
+
+
+# Backups
+
+# Yandex
+YADISK_PLATFORM = "yadisk"
+YANDEX_CLIENT_ID = os.environ.get("YANDEX_CLIENT_ID", None)
+YANDEX_CLIENT_SECRET = os.environ.get("YANDEX_CLIENT_SECRET", None)
+YANDEX_DISK_FILE_PATH = os.environ.get("YANDEX_DISK_FILE_PATH", None)
