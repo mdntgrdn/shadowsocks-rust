@@ -168,6 +168,17 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "typing-extensions"
+version = "4.12.2"
+description = "Backported and Experimental Type Hints for Python 3.8+"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "typing_extensions-4.12.2-py3-none-any.whl", hash = "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d"},
+    {file = "typing_extensions-4.12.2.tar.gz", hash = "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"},
+]
+
+[[package]]
 name = "urllib3"
 version = "2.2.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -195,6 +206,9 @@ files = [
     {file = "yadisk-3.1.0.tar.gz", hash = "sha256:7228fad42007e1ff8becc48ca9bfa357398f68fa50fe597672d4bf92d99e6685"},
 ]
 
+[package.dependencies]
+typing-extensions = {version = "*", markers = "python_version < \"3.10\""}
+
 [package.extras]
 aiohttp = ["aiohttp"]
 async-defaults = ["aiofiles", "httpx"]
@@ -206,5 +220,5 @@ sync-defaults = ["requests"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.11"
-content-hash = "ff64d5381f7f36cb1cc3fcbe76debf8eedaa1c32e7146c527373e7514c04e84c"
+python-versions = ">=3.8.5"
+content-hash = "d4a94d58af250db65972bf70d6ea9837f6cf29a46cd52bfc8e6b494bf550ad4d"
