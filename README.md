@@ -1,10 +1,15 @@
 # Gettings Started
 
-To start:
-- ```apt install docker```
-- ```poetry install```
-***
+## Project Dependencies:
+- Docker
+- Poetry
+- Python >= 3.8.5
 
+## To start
+```poetry install```
+```poetry shell```
+
+***
 # Environment Variables
 - ```DOCKER_IMAGE``` - base shadowsocks-rust docker image. default=ghcr.io/shadowsocks/ssserver-rust:v1.18.4
 - ```V2RAY_VERSION``` - version of v2ray-plugin. default=v1.3.2
@@ -19,12 +24,6 @@ https://yandex.com/dev/id/doc/en/register-client, keep in mind that redirect url
 - ```YANDEX_CLIENT_ID``` - Yandex Application ID
 - ```YANDEX_CLIENT_SECRET``` - Yandex Application Client Secret
 - ```YANDEX_DISK_FILE_PATH``` - Path to the yandex disk (default="/config.json")
-
-To load default environment variables, add the next bash command at the end of the .bashrc file
-```bash
-export $(cat <<path>>/shadowsocks-rust/.env | grep -vE "^#" | xargs)
-```
-- path - path to the shadowsocks-rust folder
 ***
 
 # Scripts
@@ -55,12 +54,12 @@ python3 start.py
 If backup is enabled and you would like to manually upload config.json file to the storage,
 so you need to use this command
 ```bash
-python3 backup_config.py 
+python3 backup_config.py --platform="yadisk"
 ```
 ## download_config.py
 If you already have a config in supported storage you can download it through the next command
 ```bash
-python3 download_config.py 
+python3 download_config.py --platform="yadisk"
 ```
 ***
 
