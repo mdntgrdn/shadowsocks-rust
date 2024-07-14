@@ -87,7 +87,14 @@ class YandexClient:
     def download_config_from_yandex_disk(self):
         if os.path.exists('config.json'):
             print("You already have a config, to download new one delete existing.")
-        self.yandex_client.download(constants.YANDEX_DISK_FILE_PATH, 'config.json', overwrite=True)
+        self.check_and_refresh_token()  # Обновляем токен, если истек
+        try:
+            self.yandex_client.download(constants.YANDEX_DISK_FILE_PATH, 'config.json', overwrite=True)
+        except yadisk.exceptions.UnauthorizedError:
+            print("Unauthorized access. Check application id and secret key.")
+        except yadisk.exceptions.PathNotFoundError:
+            print("No file to download was found.")
+
 
 
 if __name__ == '__main__':
